@@ -45,7 +45,7 @@ function SubjectsBoard() {
       .order("name")
       .then(({ data, error }) => {
         if (!active) return;
-        if (error) setError("Couldn't load subjects. Check your connection.");
+        if (error) setError(`Couldn't load subjects: ${error.message}`);
         else setSubjects((data ?? []) as Subject[]);
         setLoading(false);
       });
