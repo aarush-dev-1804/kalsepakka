@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Press_Start_2P, Space_Grotesk } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { AuthProvider } from "@/components/AuthProvider";
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${pixel.variable} ${grotesk.variable}`}>
       <body className="antialiased">
         <AuthProvider>{children}</AuthProvider>
+        <Analytics />
       </body>
     </html>
   );
